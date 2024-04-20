@@ -22,6 +22,8 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         // \App\Http\Middleware\AuthCheck::class,
+         \Fruitcake\Cors\HandleCors::class,
+
     ];
 
     /**
@@ -37,6 +39,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Fruitcake\Cors\HandleCors::class,
         ],
 
         'api' => [
@@ -44,6 +47,7 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \Fruitcake\Cors\HandleCors::class,
             //     \App\Http\Middleware\VerifyCsrfToken::class,
 
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
