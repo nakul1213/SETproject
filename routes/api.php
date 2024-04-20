@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StudentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,10 +39,22 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('get-read-notification', 'getReadNotification');
     Route::post('mark-read-notification', 'markReadNotification');
     Route::post('GetBiometicAttendance', 'GetBiometicAttendance');
+    
+
 });
 
+<<<<<<< HEAD
 // here add routes Module wise
 include('complaintRoutes.php');
+=======
+Route::controller(StudentController::class)->group(function () {
+    Route::post('student',[StudentController::class, 'addStudent']);
+    Route::get('students', [StudentController::class, 'getAllStudents']);
+    Route::get('students/{id}', [StudentController::class, 'getStudentById']);
+    Route::delete('students/{id}', [StudentController::class, 'deleteStudent']);
+    Route::put('students/{id}', [StudentController::class, 'updateStudent']);
+});
+>>>>>>> a4131841f6aff891174b071a12774eafa9add0e3
 
 include('adminRoutes.php');
 include('userRoutes.php');
