@@ -39,6 +39,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 // here add routes Module wise
+include('complaintRoutes.php');
 
 include('adminRoutes.php');
 include('userRoutes.php');
