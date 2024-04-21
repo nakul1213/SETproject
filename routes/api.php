@@ -43,6 +43,9 @@ Route::controller(AuthController::class)->group(function () {
 
 });
 
+// here add routes Module wise
+include('complaintRoutes.php');
+
 Route::controller(StudentController::class)->group(function () {
     Route::post('student',[StudentController::class, 'addStudent']);
     Route::get('students', [StudentController::class, 'getAllStudents']);
@@ -50,6 +53,5 @@ Route::controller(StudentController::class)->group(function () {
     Route::delete('students/{id}', [StudentController::class, 'deleteStudent']);
     Route::put('students/{id}', [StudentController::class, 'updateStudent']);
 });
-
 include('adminRoutes.php');
 include('userRoutes.php');
