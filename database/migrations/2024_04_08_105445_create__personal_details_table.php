@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('_personal_details', function (Blueprint $table) {
@@ -26,8 +22,8 @@ return new class extends Migration
             $table->string('alotted_category');
             $table->string('dob');
             $table->string('gender');
-            $table->enum('prep', ['yes', 'no'])->default('no');
-            $table->string('conutry');
+            $table->enum('prep', ['yes', 'no']) ;
+            $table->string('country');
             $table->string('state');
             $table->string('city');
             $table->integer('pincode');
@@ -36,7 +32,7 @@ return new class extends Migration
             $table->string('p_ad_line_2');
             $table->enum('blood_group', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']);
             $table->string('nationality');
-            $table->string('birt_place');
+            $table->string('birth_place');
             $table->enum('religion', ['Hinduism', 'Islam', 'Christianity', 'Sikhism', 'Buddhism', 'Jainism', 'Other']);
             $table->string('photo_path');
             $table->string('sign_path');
@@ -44,11 +40,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('_presonal_details');

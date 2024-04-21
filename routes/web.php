@@ -25,11 +25,13 @@ Route::get('/personal-details', function () {
 
 Route::post('/personal-details', [PersonalDetailsController::class, 'store'])->name('personal-details.store');
 
-Route::get('/hello', [PersonalDetailsController::class, 'hello']); // Removed the extra space after the class name
+ 
 
-Route::post('/new-data', [PersonalDetailsController::class, 'newDataEndpoint']);
+Route::post('/submit_details', [submit_details::class, 'store'])->name('submit_details.store');
 
 
-Route::prefix('admin')->group(function () {
-    Route::get('test', [AdminController::class, 'test']); // Assuming 'test' is a method in AdminController
+
+Route::controller(AdminController::class)->group(function () {
+    //  Route::get('test', 'test');
 });
+
